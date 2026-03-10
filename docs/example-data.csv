@@ -1,0 +1,43 @@
+# Примеры данных для Google Sheets
+
+## skus.csv
+sku,active,created_at,created_by
+ZEZSHOP-S1MLKS,TRUE,2024-01-15T10:00:00Z,admin
+ZEZSHOP-S2MLKS,TRUE,2024-01-15T10:00:00Z,admin
+ZEZSHOP-S3MLKS,TRUE,2024-01-15T10:00:00Z,admin
+
+## suppliers.csv
+supplier_id,supplier_name,contacts,created_at,created_by
+SUP-1234567890,Поставщик А,+998901234567,2024-01-15T10:00:00Z,admin
+SUP-1234567891,Поставщик Б,+998901234568,2024-01-15T10:00:00Z,admin
+
+## purchase_orders.csv
+po_id,supplier_id,order_amount_uzs,shipping_cost_uzs,total_amount_uzs,total_qty,unit_cost_uzs,status,created_at,received_at,created_by
+PO-1234567890-abc123,SUP-1234567890,1000000,50000,1050000,100,10500,IN_TRANSIT,2024-01-15T10:00:00Z,,admin
+
+## purchase_order_items.csv
+po_id,sku,qty,unit_cost_uzs,created_at
+PO-1234567890-abc123,ZEZSHOP-S1MLKS,50,10500,2024-01-15T10:00:00Z
+PO-1234567890-abc123,ZEZSHOP-S2MLKS,50,10500,2024-01-15T10:00:00Z
+
+## movements.csv
+move_id,type,source,destination,marketplace,sku,qty,unit_cost_uzs,amount_uzs,note,created_at,created_by
+MOVE-1234567890-xyz,PO_CREATE,NONE,IN_TRANSIT,NONE,ZEZSHOP-S1MLKS,50,10500,,,2024-01-15T10:00:00Z,admin
+
+## office_stock.csv
+sku,qty,updated_at
+ZEZSHOP-S1MLKS,25,2024-01-20T15:30:00Z
+ZEZSHOP-S2MLKS,30,2024-01-20T15:30:00Z
+
+## uzum_sales_raw.csv
+sale_id,doc_id,sold_at,sku,qty,net_revenue_uzs,raw_json,created_at
+SALE-123,DOC-456,2024-01-20T12:00:00Z,ZEZSHOP-S1MLKS,2,200000,"{}",2024-01-20T13:00:00Z
+
+## profit_calc.csv
+calc_id,period_start,period_end,sku,qty_sold,net_revenue_usd,avg_cogs_usd,cogs_total_usd,profit_usd,created_at
+CALC-123,2024-01-01T00:00:00Z,2024-01-31T23:59:59Z,ZEZSHOP-S1MLKS,10,1000.00,10.50,105.00,895.00,2024-02-01T10:00:00Z
+
+## ideas.csv
+idea_id,idea_text,created_at,created_by
+IDEA-1234567890,Добавить функцию экспорта отчетов,2024-01-20T15:30:00Z,admin
+
