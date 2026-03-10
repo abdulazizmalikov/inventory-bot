@@ -1,5 +1,6 @@
 import { Bot, InlineKeyboard } from 'grammy';
-import { BotContext, ReturnState } from '../bot';
+import { BotContext } from '../bot';
+import { ReturnState } from '../types';
 import { generateMoveId } from '../utils/id';
 import { getCurrentTimestamp } from '../utils/date';
 import { Marketplace } from '../types';
